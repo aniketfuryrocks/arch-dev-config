@@ -16,19 +16,25 @@ bindsym $mod+d exec rofi -show run
 
 #_________________________________Startup Applications__________________________________
 
+# Set Wallpaper
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # Picom (Compositor)
 exec picom
 
 # Firefox (On Workspace 2)
-exec --no-startup-id i3-msg 'workspace 2; exec firefox'
+exec --no-startup-id firefox
 
 # Discord (On Workspace 6)
-exec --no-startup-id i3-msg 'workspace 6; exec discord'
+exec --no-startup-id discord
 
 # Discord (On Workspace 6)
-exec --no-startup-id i3-msg 'workspace 6; exec mailspring'
+exec --no-startup-id mailspring
 
+# Assign Workspaces:
+assign [class="firefox"] $ws2
+assign [class="discord"] $ws6
+assign [class="Mailspring"] $ws6
 
 #____________________Window and i3 Specific Key bindings__________________________________
 
@@ -177,7 +183,6 @@ bar {
         binding_mode        #229c56 #229c56 #ffffff
     }
 }
-
 
 
 #_______________________________borders_________________________________
