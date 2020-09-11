@@ -1,5 +1,5 @@
 #disk
-sudo pacman -S gnome-disk-utility gnome-keyring obs-studio firefox
+sudo pacman -S gnome-disk-utility gnome-keyring obs-studio firefox pavucontrol
 #vscode
 sudo snap install code --classic
 #mailspring
