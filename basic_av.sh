@@ -10,6 +10,8 @@ then
   sudo pacman -S nvidia nvidia-utils nvidia-settings xorg-server-devel opencl-nvidia
   sudo echo "blacklist nouveau" | sudo tee /usr/lib/modprobe.d/nvidia.conf
 fi
+#dpi
+cp .Xresources ~/.Xresources
 #gestures
 pamac build libinput-gestures
 sudo gpasswd -a $USER input
