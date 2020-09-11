@@ -15,7 +15,5 @@ sudo cp nginx.conf /etc/nginx.conf
 sudo systemctl enable nginx
 #deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
-#java
-sudo pacman -S jdk-openjdk
-#python
-sudo pacman -S python3 python3-pip
+#java python aws-cli
+sudo pacman -S jdk-openjdk python3 python3-pip aws-cli
