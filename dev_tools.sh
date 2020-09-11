@@ -7,9 +7,15 @@ nvm install node
 #yarn
 sudo pacman -S yarn --assume-installed=nodejs
 echo "export PATH=\"\$PATH:$(yarn global bin)\"" >> ~/.zshrc
+source .zshrc
+yarn global add nodemon serverless serve expo-cli
 #nginx
 sudo pacman -S nginx
 sudo cp nginx.conf /etc/nginx.conf
 sudo systemctl enable nginx
 #deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
+#java
+sudo pacman -S jdk-openjdk
+#python
+sudo pacman -S python3 python3-pip

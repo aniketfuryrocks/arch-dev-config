@@ -10,3 +10,8 @@ then
   sudo pacman -S nvidia nvidia-utils nvidia-settings xorg-server-devel opencl-nvidia
   sudo echo "blacklist nouveau" | sudo tee /usr/lib/modprobe.d/nvidia.conf
 fi
+#gestures
+pamac build libinput-gestures
+sudo gpasswd -a $USER input
+libinput-gestures-setup start
+libinput-gestures-setup autostart
