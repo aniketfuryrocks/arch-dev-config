@@ -12,7 +12,8 @@ bindsym $mod+Return exec alacritty
 # Rofi program launcher
 bindsym $mod+d exec rofi -show run
 
-
+# Lock
+bindsym $mod+l exec i3lock
 
 #_________________________________Startup Applications__________________________________
 
