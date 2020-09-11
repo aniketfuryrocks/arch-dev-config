@@ -4,3 +4,4 @@ sudo enable lightdm
 #i3 config
 mkdir -p ~/.config
 cp -avr .config/i3 ~/.config
+cp -avr .config/i3blocks ~/.config
