@@ -1,7 +1,9 @@
 #basic visual
-pacman -S xorg xrandr xorg-server-devel xorg-server xorg-xinit noto-fonts alacritty
+sudo pacman -S xorg xrandr xorg-server-devel xorg-server xorg-xinit alacritty vlc
 #basic audio
-pacman -S pulseaudio pulseaudio-alsa pavucontrol
+sudo pacman -S pulseaudio pulseaudio-alsa alsa-utils alsa-plugins alsa-lib pavucontrol
+#basic fonts
+sudo pacman -S noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome
 #alacritty config
 mkdir -p ~/.config
 cp -avr .config/alacritty ~/.config
