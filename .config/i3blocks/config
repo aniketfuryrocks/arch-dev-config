@@ -7,8 +7,8 @@ command=echo "🕑 $(date +%r)"
 interval=1s
 
 [battery]
-command=echo " $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "percentage" | cut -c26-)"
-interval=once
+command=echo " $(sh battery.sh)"
+interval=30s
 
 [audio]
 command=echo "";[[ -z "${BLOCK_BUTTON}" ]] || pavucontrol
