@@ -197,4 +197,6 @@ bar {
 
 #_______________________________borders_________________________________
 
-for_window [class="^.*"] border pixel 0
+
+client.focused #FF0000 #CC0000 #ffffff #3c6f73   #3e4e4f
+for_window [class="^.*"] border pixel 1
