@@ -1,15 +1,15 @@
-color=#f3f4f5
-separator_block_width=20
+color=#f3f4f2
+separator_block_width=18
 markup=none
-
-[time]
-command=echo "🕑 $(date +%r)"
-interval=1s
-
-[battery]
-command=echo " $(sh battery.sh)"
-interval=30s
 
 [audio]
 command=echo "";[[ -z "${BLOCK_BUTTON}" ]] || pavucontrol
 interval=1
+
+[battery]
+command=echo "  $(sh battery.sh)"
+interval=30s
+
+[time]
+command=date +%r
+interval=1s
