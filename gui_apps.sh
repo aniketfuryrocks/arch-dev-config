@@ -1,5 +1,5 @@
 #disk
-sudo pacman -S gnome-disk-utility gnome-keyring obs-studio firefox gpick
+sudo pacman -S gnome-disk-utility gnome-keyring obs-studio firefox gpick atom
 #vscode
 sudo snap install code --classic
 #mailspring

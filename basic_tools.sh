@@ -12,15 +12,6 @@ rustup install stable
 cargo install bat
 cargo install hostcat
 
-#oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-#source
-source ~/.zshrc
-#syntax highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-#auto suggestion
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
 #bluetooth
 sudo pacman -S bluez bluez-utils blueman
 sudo systemctl enable bluetooth
@@ -29,8 +20,6 @@ sudo systemctl enable bluetooth
 sudo pacman -S cups hplip
 sudo systemctl enable org.cups.cupsd.service
 
-#notification
-sudo pacman -S libnotify dunst
 
 # _________configs___________
 #hostname
@@ -39,5 +28,17 @@ echo $host_name | sudo tee -a /etc/hostname
 #hosts
 echo "127.0.1.1	$host_name" | sudo tee -a /etc/hosts
 sudo cp hosts /etc/hosts
+
 #zshrc
 cp .zshrc ~/.zshrc
+
+#oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#reload
+zsh
+#syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+#auto suggestion
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+#exit
+exit

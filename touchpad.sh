@@ -7,4 +7,4 @@ echo "Section "InputClass"
         Option "TappingButtonMap" "lrm"
         Option "NaturalScrolling" "on"
         Option "ScrollMethod" "twofinger"
-EndSection" > /etc/X11/xorg.conf.d/90-touchpad.conf
+EndSection" | sudo tee /etc/X11/xorg.conf.d/90-touchpad.conf

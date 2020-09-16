@@ -1,20 +1,25 @@
 #git
-sudo pacman -S git
 git config --global credential.helper store
+
 #nvm
-sudo pacman -S nvm
+pamac build nvm
+
 #node
 nvm install node
+
 #yarn
 sudo pacman -S yarn --assume-installed=nodejs
 echo "export PATH=\"\$PATH:$(yarn global bin)\"" >> ~/.zshrc
-source .zshrc
+source ~/.zshrc
 yarn global add nodemon serverless serve expo-cli
+
 #nginx
 sudo pacman -S nginx
 sudo cp nginx.conf /etc/nginx.conf
 sudo systemctl enable nginx
+
 #deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
+
 #java python aws-cli
-sudo pacman -S jdk-openjdk python3 python3-pip aws-cli
+sudo pacman -S jdk-openjdk python3 python-pip aws-cli
