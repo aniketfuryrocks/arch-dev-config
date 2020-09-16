@@ -20,10 +20,13 @@ bindsym $mod+l exec i3lock
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # Polybar
-exec_always --no-startup-id sh ~/.config/polybar/launch.sh
+exec --no-startup-id sh ~/.config/polybar/launch.sh
 
 # Picom (Compositor)
-exec picom
+exec --no-startup-id picom
+
+# Dunst (Notification)
+exec --no-startup-id dunst
 
 # Firefox (On Workspace 2)
 exec --no-startup-id firefox
