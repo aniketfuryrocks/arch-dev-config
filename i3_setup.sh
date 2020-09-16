@@ -8,3 +8,5 @@ pamac build siji-git ttf-ms-fonts
 mkdir -p ~/.config
 cp -avr .config/i3 ~/.config
 cp -avr .config/i3blocks ~/.config
+cp -avr .config/dunst ~/.config
+cp -avr .config/polybar ~/.polybar

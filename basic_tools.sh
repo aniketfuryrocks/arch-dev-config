@@ -4,12 +4,14 @@ sudo pacman -S git curl wget NetworkManager ranger zsh base-devel linux-tools un
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+
 #rust
 sudo pacman -S rustup
 rustup install stable
 #cargo
 cargo install bat
 cargo install hostcat
+
 #oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 #source
@@ -28,7 +30,7 @@ sudo pacman -S cups hplip
 sudo systemctl enable org.cups.cupsd.service
 
 #notification
-sudo pacman -S libnotify notification-daemon dunst
+sudo pacman -S libnotify dunst
 
 # _________configs___________
 #hostname
