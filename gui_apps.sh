@@ -9,8 +9,8 @@ sudo snap install discord --classic
 #spotify
 flatpak install spotify
 #woeusb
-yay -S woeusb-git
+pamac build woeusb-git
 #jetbrains toolbox
-yay -S jetbrains-toolbox
+pamac build jetbrains-toolbox
 #zoom
-yay -S zoom
+pamac build zoom
