@@ -1,5 +1,5 @@
 #disk
-sudo pacman -S gnome-disk-utility gnome-keyring obs-studio firefox
+sudo pacman -S gnome-disk-utility gnome-keyring obs-studio firefox gpick
 #vscode
 sudo snap install code --classic
 #mailspring
@@ -14,3 +14,5 @@ pamac build woeusb-git
 pamac build jetbrains-toolbox
 #zoom
 pamac build zoom
+#pamac
+pamac build postman
