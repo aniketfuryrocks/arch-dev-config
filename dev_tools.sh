@@ -10,9 +10,10 @@ pamac build nvm
 nvm install node
 
 #yarn
+
+source ~/.zshrc
 sudo pacman -S yarn --assume-installed=nodejs
 echo "export PATH=\"\$PATH:$(yarn global bin)\"" >> ~/.zshrc
-source ~/.zshrc
 yarn global add nodemon serverless serve expo-cli
 
 #nginx
