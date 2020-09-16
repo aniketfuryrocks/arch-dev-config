@@ -25,6 +25,9 @@ exec --no-startup-id sh ~/.config/polybar/launch.sh
 # Picom (Compositor)
 exec --no-startup-id picom
 
+# Blueman-tray (bluetooth)
+exec --no-startup-id blueman-tray
+
 # Dunst (Notification)
 exec --no-startup-id dunst
 
