@@ -5,13 +5,12 @@ git config --global credential.helper store
 
 #nvm
 pamac build nvm
+source ~/.zshrc
 
 #node
 nvm install node
 
 #yarn
-
-source ~/.zshrc
 sudo pacman -S yarn --assume-installed=nodejs
 echo "export PATH=\"\$PATH:$(yarn global bin)\"" >> ~/.zshrc
 yarn global add nodemon serverless serve expo-cli

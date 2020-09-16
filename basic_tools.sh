@@ -29,16 +29,12 @@ echo $host_name | sudo tee -a /etc/hostname
 echo "127.0.1.1	$host_name" | sudo tee -a /etc/hosts
 sudo cp hosts /etc/hosts
 
-#zshrc
-cp .zshrc ~/.zshrc
 
+#syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+#auto suggestion
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 #oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-#reload
-zsh
-#syntax highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-#auto suggestion
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-#exit
-exit
+#zshrc
+cp .zshrc ~/.zshrc
