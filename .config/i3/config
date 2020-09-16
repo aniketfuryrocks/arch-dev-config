@@ -180,3 +180,7 @@ gaps outer 5
 
 client.focused #FF0000 #CC0000 #ffffff #3c6f73   #3e4e4f
 for_window [class="^.*"] border pixel 0
+
+#____________________Mouse_____________________________________________
+
+focus_follows_mouse no

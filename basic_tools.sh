@@ -19,6 +19,17 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 #auto suggestion
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
+#bluetooth
+sudo pacman -S bluez bluez-utils blueman
+sudo systemctl enable bluetooth
+
+#printer
+sudo pacman -S cups hplip
+sudo systemctl enable org.cups.cupsd.service
+
+#notification
+sudo pacman -S libnotify notification-daemon dunst
+
 # _________configs___________
 #hostname
 read -p "Enter hostname : " host_name
