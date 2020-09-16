@@ -1,4 +1,6 @@
 #git
+git config --global user.email "prajapati.ani306@gmail.com"
+git config --global user.name "aniketfuryrocks"
 git config --global credential.helper store
 
 #nvm
