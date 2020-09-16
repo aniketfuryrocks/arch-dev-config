@@ -3,21 +3,7 @@ echo "NVIDIA only setup"
 sudo mkdir -p /etc/X11/xorg.conf.d
 
 #make nvidia primary
-echo "Section "OutputClass"
-    Identifier "intel"
-    MatchDriver "i915"
-    Driver "modesetting"
-EndSection
-
-Section "OutputClass"
-    Identifier "nvidia"
-    MatchDriver "nvidia-drm"
-    Driver "nvidia"
-    Option "AllowEmptyInitialConfiguration"
-    Option "PrimaryGPU" "yes"
-    ModulePath "/usr/lib/nvidia/xorg"
-    ModulePath "/usr/lib/xorg/modules"
-EndSection" | sudo tee /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
+sudo cp nvidia_conf /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
 
 #use nvidia
 echo "xrandr --setprovideroutputsource modesetting NVIDIA-0
