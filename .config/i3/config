@@ -1,8 +1,7 @@
 # Super Key
 set $mod Mod4
 
-# Font
-font pango:noto Regular 10
+font pango:arial Regular 10
 
 #____________________Launch Application key bindings__________________________________
 
@@ -19,6 +18,9 @@ bindsym $mod+l exec i3lock
 
 # Set Wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+
+# Polybar
+exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 
 # Picom (Compositor)
 exec picom
@@ -167,36 +169,14 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-
 #_______________________________i3 bar__________________________________
 
-bar {
-    status_command          i3blocks
-    bindsym button4         nop
-    bindsym button5         nop
-    position                bottom
-    tray_output             primary
-    separator_symbol        "|"
-    workspace_buttons       yes
-    strip_workspace_numbers yes
-    height                  35
 
-    colors {
-        background  #212121
-        statusline  #dddddd
-        separator   #666666
-        # class             border  backgr. text
-        focused_workspace   #2b83a6 #2b83a6 #ffffff
-        active_workspace    #212121 #212121 #ffffff
-        inactive_workspace  #212121 #212121 #86888c
-        urgent_workspace    #d64e4e #d64e4e #ffffff
-        binding_mode        #229c56 #229c56 #ffffff
-    }
-}
-
+gaps inner 5
+gaps outer 5
 
 #_______________________________borders_________________________________
 
 
 client.focused #FF0000 #CC0000 #ffffff #3c6f73   #3e4e4f
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
