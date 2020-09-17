@@ -19,15 +19,15 @@ bindsym $mod+l exec i3lock
 # Utils
 
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg   # Set Wallpaper
-exec --no-startup-id sh ~/.config/polybar/launch.sh           # Polybar
+exec_always --no-startup-id sh ~/.config/polybar/launch.sh    # Polybar
 exec --no-startup-id picom                                    # Picom (Compositor)
 exec --no-startup-id dunst                                    # Dunst (Notification)
 
 # Tray Icons
 
-exec --no-startup-id mictray                                  # Mic
-exec --no-startup-id pasystray                                # Audio
-exec --no-startup-id nm-applet                                # Network
+exec_always --no-startup-id mictray                           # Mic
+exec_always --no-startup-id pasystray                         # Audio
+exec_always --no-startup-id nm-applet                         # Network
 
 
 # My Apps
