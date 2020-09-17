@@ -1,10 +1,10 @@
 # Arch Setup Scripts
 
 > Note : Do not blindly run or use dot files
-
-> scripts stress more over my personal workflow
-
-> NVIDIA is prioratised in intel/nvidia machine
+>
+> scripts are stress more over my personal workflow
+>
+> NVIDIA is prioratised for intel/nvidia machine
 
 ## Order
 
