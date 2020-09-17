@@ -1,5 +1,9 @@
 # Arch Setup Scripts
 
+> Note : Do not blindly run or use dot files
+> scripts stress more over my personal workflow
+> NVIDIA is prioratised in intel/nvidia machine
+
 ## Order
 
 1. basic_tools.sh
