@@ -25,15 +25,15 @@ exec --no-startup-id dunst                                    # Dunst (Notificat
 
 # Tray Icons
 
-exec --no-startup-id mictray                           # Mic
-exec --no-startup-id pasystray                         # Audio
-exec --no-startup-id nm-applet                         # Network
+exec --no-startup-id mictray                                  # Mic
+exec --no-startup-id pasystray                                # Audio
+exec --no-startup-id nm-applet                                # Network
 
 
 # My Apps
 
 exec --no-startup-id firefox                                  # Firefox (On Workspace 2)
-exec --no-startup-id spotify                                  # spotify (On Workspace 5)
+exec --no-startup-id spotify                                  # Spotify (On Workspace 5)
 exec --no-startup-id mailspring                               # Mailspring (On Workspace 6)
 exec --no-startup-id discord                                  # Discord (On Workspace 6)
 
