@@ -25,9 +25,9 @@ exec --no-startup-id dunst                                    # Dunst (Notificat
 
 # Tray Icons
 
-exec_always --no-startup-id mictray                           # Mic
-exec_always --no-startup-id pasystray                         # Audio
-exec_always --no-startup-id nm-applet                         # Network
+exec --no-startup-id mictray                           # Mic
+exec --no-startup-id pasystray                         # Audio
+exec --no-startup-id nm-applet                         # Network
 
 
 # My Apps
