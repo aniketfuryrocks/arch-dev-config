@@ -1,0 +1,1 @@
+pamac build optimus-manager
