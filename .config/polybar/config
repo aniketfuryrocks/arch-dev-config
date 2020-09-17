@@ -1,13 +1,16 @@
 [colors]
-;background = ${xrdb:color0:#222}
 background = #21252B
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
+foreground = #ffffff
+foreground-alt = #ffffff
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+
+
+;_________________________________ Bar ________________________________
+
+
 
 [bar/example]
 width = 100%
@@ -29,24 +32,23 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=12;
-font-1 = Siji:pixelsize=12;0
+font-1 = Siji:pixelsize=16;0
 font-2 = Font Awesome 5 Brands:style=Regular:pixelsize=12;0
 font-3 = Font Awesome 5 Solid:style=Regular:pixelsize=12;0
 font-4 = Font Awesome 5 Free:style=Regular:pixelsize=12;0
 
 modules-left = i3
-modules-center = xwindow
-modules-right = pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = pulseaudio wlan eth battery date powermenu
 
-tray-position = right
+tray-position = center
 tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
+
+;____________________________ i3 Workspaces ________________________________
+
 
 
 [module/i3]
@@ -91,21 +93,11 @@ label-urgent-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = %percentage:2%%
 
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage_used%%
+
+;_________________________________ Wlan __________________________________
+
+
 
 [module/wlan]
 type = internal/network
@@ -129,6 +121,11 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
+
+;_________________________________ Eth __________________________________
+
+
+
 [module/eth]
 type = internal/network
 
@@ -146,6 +143,11 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
+
+;_________________________________ Date __________________________________
+
+
+
 [module/date]
 type = internal/date
 interval = 5
@@ -162,19 +164,22 @@ format-underline = #0a6cf5
 
 label = %date% %time%
 
+
+;_________________________________ PulseAudio __________________________________
+
+
 [module/pulseaudio]
 type = internal/pulseaudio
-
-click-middle = pavucontrol
-
 format-volume = <label-volume>
-
-label-volume = VOL %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 label-volume-underline = #9213f9
-
-label-muted = 🔇 muted
+label-muted = 
 label-muted-foreground = #666
+
+
+;_________________________________ Battery __________________________________
+
 
 [module/battery]
 type = internal/battery
@@ -209,24 +214,10 @@ animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
 
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+;_________________________________ PowerMenu _________________________________
 
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -256,6 +247,7 @@ menu-2-0 = power off
 menu-2-0-exec = poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
 
 [global/wm]
 margin-top = 5
