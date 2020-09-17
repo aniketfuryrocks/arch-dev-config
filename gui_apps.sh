@@ -10,7 +10,7 @@ sudo pacman -S flatpak
 #vscode
 sudo snap install code --classic
 #mailspring
-sudo snap install mailspring --classic
+pamac build mailspring
 #discord
 sudo snap install discord --classic
 #spotify
