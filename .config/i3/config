@@ -64,8 +64,7 @@ bindsym XF86MonBrightnessUp exec sh ~/.config/i3/backlight.sh +100
 bindsym XF86MonBrightnessDown exec sh ~/.config/i3/backlight.sh -1
 
 # Media player controls
-bindsym XF86AudioPlay exec --no-startup-id playerctl play
-bindsym XF86AudioPause exec --no-startup-id playerctl pause
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
