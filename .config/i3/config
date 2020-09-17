@@ -45,7 +45,7 @@ assign [class="Mailspring"] $ws6
 assign [class="steam"] $ws9
 assign [class="Lutris"] $ws9
 assign [class="zoom"] $ws7
-assign [class="spotify"] $ws5
+for_window [class="Spotify"] move to workspace $ws5
 
 
 #____________________Window and i3 Specific Key bindings__________________________________
