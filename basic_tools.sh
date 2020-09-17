@@ -13,8 +13,10 @@ cargo install bat
 cargo install hostcat
 
 #bluetooth
-sudo pacman -S bluez bluez-utils blueman
+sudo pacman -S bluez bluez-utils blueman pulseaudio-bluetooth
 sudo systemctl enable bluetooth
+sudo mkdir /etc/bluetooth
+sudo cp audio.conf /etc/bluetooth/audio.conf
 
 #printer
 sudo pacman -S cups hplip
