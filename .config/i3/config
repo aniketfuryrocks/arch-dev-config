@@ -9,7 +9,7 @@ font pango:DejaVu Sans Mono 11
 bindsym $mod+Return exec alacritty
 
 # Rofi program launcher
-bindsym $mod+d exec rofi -show run
+bindsym $mod+shift+Return exec rofi -show run
 
 # Lock
 bindsym $mod+l exec i3lock
