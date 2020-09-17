@@ -33,8 +33,10 @@ exec --no-startup-id nm-applet                         # Network
 # My Apps
 
 exec --no-startup-id firefox                                  # Firefox (On Workspace 2)
-exec --no-startup-id discord                                  # Discord (On Workspace 6)
+exec --no-startup-id com.spotify.Client                       # spotify (On Workspace 5)
 exec --no-startup-id mailspring                               # Mailspring (On Workspace 6)
+exec --no-startup-id discord                                  # Discord (On Workspace 6)
+
 
 # Assign Workspaces:
 assign [class="firefox"] $ws2
@@ -42,6 +44,9 @@ assign [class="discord"] $ws6
 assign [class="Mailspring"] $ws6
 assign [class="steam"] $ws9
 assign [class="Lutris"] $ws9
+assign [class="zoom"] $ws7
+for_window [class="Spotify"] move to workspace $ws5
+
 
 #____________________Window and i3 Specific Key bindings__________________________________
 
@@ -112,15 +117,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #____________________________________Workspaces_____________________________
 
 # variables
-#set $ws1 1 #
-#set $ws2 2 #
-#set $ws3 3 #
-#set $ws4 4 #
-#set $ws5 5 #
-#set $ws6 6 #
-#set $ws9 9 #
-#set $ws10 10 
-
 set $ws1 1
 set $ws2 2
 set $ws3 3
