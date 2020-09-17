@@ -16,26 +16,25 @@ bindsym $mod+l exec i3lock
 
 #_________________________________Startup Applications__________________________________
 
-# Set Wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+# Utils
 
-# Polybar
-exec --no-startup-id sh ~/.config/polybar/launch.sh
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg   # Set Wallpaper
+exec --no-startup-id sh ~/.config/polybar/launch.sh           # Polybar
+exec --no-startup-id picom                                    # Picom (Compositor)
+exec --no-startup-id dunst                                    # Dunst (Notification)
 
-# Picom (Compositor)
-exec --no-startup-id picom
+# Tray Icons
 
-# Dunst (Notification)
-exec --no-startup-id dunst
+exec --no-startup-id mictray                                  # Mic
+exec --no-startup-id pasystray                                # Audio
+exec --no-startup-id nm-applet                                # Network
 
-# Firefox (On Workspace 2)
-exec --no-startup-id firefox
 
-# Discord (On Workspace 6)
-exec --no-startup-id discord
+# My Apps
 
-# Discord (On Workspace 6)
-exec --no-startup-id mailspring
+exec --no-startup-id firefox                                  # Firefox (On Workspace 2)
+exec --no-startup-id discord                                  # Discord (On Workspace 6)
+exec --no-startup-id mailspring                               # Mailspring (On Workspace 6)
 
 # Assign Workspaces:
 assign [class="firefox"] $ws2
@@ -149,6 +148,9 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 
+#_______________________________Modes__________________________________
+
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -180,15 +182,15 @@ bindsym $mod+r mode "resize"
 #_______________________________i3 bar__________________________________
 
 
-gaps inner 10
-gaps outer 0
+
 
 #_______________________________borders_________________________________
 
 
 client.focused #FF0000 #CC0000 #ffffff #3c6f73   #3e4e4f
 for_window [class="^.*"] border pixel 1
-
+gaps inner 10
+gaps outer 0
 
 #____________________Mouse_____________________________________________
 
