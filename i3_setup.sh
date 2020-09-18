@@ -10,7 +10,7 @@ sudo systemctl enable lightdm
 sudo pacman -S picom rofi ranger conky playerctl libnotify dunst feh dolphin
 
 # tray icon tools
-sudo pacman -S network-manager-applet mictray pasystray
+sudo pacman -S network-manager-applet mictray pasystray cbatticon
 pamac build mictray
 
 # i3 config

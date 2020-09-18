@@ -28,7 +28,7 @@ exec --no-startup-id dunst                                    # Dunst (Notificat
 exec --no-startup-id mictray                                  # Mic
 exec --no-startup-id pasystray                                # Audio
 exec --no-startup-id nm-applet                                # Network
-
+exec --no-startup-id cbatticon                                # Power
 
 # My Apps
 
