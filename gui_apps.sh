@@ -8,7 +8,7 @@ sudo ln -s /var/lib/snapd/snap /snap
 #flatpak
 sudo pacman -S flatpak
 #vscode
-sudo snap install code --classic
+sudo pacman -S code
 #mailspring
 pamac build mailspring
 #discord
@@ -23,4 +23,4 @@ pamac build jetbrains-toolbox
 #zoom
 pamac build zoom
 #pamac
-pamac build postman
+pamac build postman-bin

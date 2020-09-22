@@ -1,5 +1,5 @@
 #Basic tools
-sudo pacman -S git curl wget NetworkManager ranger zsh base-devel linux-tools unzip htop powertop
+sudo pacman -S git NetworkManager ranger zsh base-devel linux-tools unzip htop powertop
 #yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
