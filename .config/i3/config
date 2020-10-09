@@ -3,7 +3,21 @@ set $mod Mod4
 
 font pango:DejaVu Sans Mono 11
 
+#monitor
+set $laptop eDP-1-1 # internal
+set $monitor HDMI-1-1 # external
+
+# Set xrandr settings at startup
+exec xrandr --output eDP-1-1 --mode 1600x900 --right-of HDMI-1-1
+exec xrandr --output HDMI-1-1 --primary
+
+
 #____________________Launch Application key bindings__________________________________
+
+
+# Screenshot
+bindsym Print exec flameshot gui
+
 
 # Terminal
 bindsym $mod+Return exec alacritty
@@ -12,7 +26,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+shift+Return exec rofi -show run
 
 # Lock
-bindsym $mod+l exec i3lock
+bindsym $mod+l exec i3lock -k --pass-media-keys --pass-screen-keys --pass-volume-keys -C --ring-width 2 -i ~/Pictures/lock.jpg --timecolor=ffffffff
 
 # Atom
 bindsym $mod+ctrl+a exec atom
@@ -25,9 +39,9 @@ bindsym $mod+ctrl+s exec systemsettings5
 
 # Utils
 
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg   # Set Wallpaper
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg   # Set Wallpaper
 exec_always --no-startup-id sh ~/.config/polybar/launch.sh    # Polybar
-exec --no-startup-id picom                                    # Picom (Compositor)
+exec --no-startup-id picom --experimental-backends            # Picom (Compositor)
 exec --no-startup-id dunst                                    # Dunst (Notification)
 
 
@@ -50,13 +64,14 @@ exec --no-startup-id discord                                  # Discord (On Work
 
 # Assign Workspaces:
 
-assign [class="firefox"] $ws2
-assign [class="discord"] $ws6
-assign [class="Mailspring"] $ws6
-assign [class="steam"] $ws9
-assign [class="Lutris"] $ws9
-assign [class="zoom"] $ws7
-for_window [class="Spotify"] move to workspace $ws5
+assign [class="steam"] $ws1-8
+assign [class="Lutris"] $ws1-9
+
+assign [class="firefox"] $ws2-5
+for_window [class="Spotify"] move to workspace $ws2-7
+assign [class="discord"] $ws2-8
+assign [class="Mailspring"] $ws2-9
+assign [class="zoom"] $ws2-10
 
 
 
@@ -127,40 +142,101 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #____________________________________Workspaces_____________________________
 
 # variables
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
-set $ws9 9
-set $ws10 10
+# monitor
+set $ws1-1 1:
+set $ws1-2 2:
+set $ws1-3 3:
+set $ws1-4 4:
+set $ws1-5 5:
+set $ws1-6 6
+set $ws1-7 7
+set $ws1-8 8:
+set $ws1-9 9:
+set $ws1-10 10:
+# laptop
+set $ws2-1 11:
+set $ws2-2 12:
+set $ws2-3 13
+set $ws2-4 14:
+set $ws2-5 15:
+set $ws2-6 16
+set $ws2-7 17:
+set $ws2-8 18:
+set $ws2-9 19:
+set $ws2-10 20:
+
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+# monitor
+bindsym $mod+1 workspace $ws1-1
+bindsym $mod+2 workspace $ws1-2
+bindsym $mod+3 workspace $ws1-3
+bindsym $mod+4 workspace $ws1-4
+bindsym $mod+5 workspace $ws1-5
+bindsym $mod+6 workspace $ws1-6
+bindsym $mod+7 workspace $ws1-7
+bindsym $mod+8 workspace $ws1-8
+bindsym $mod+9 workspace $ws1-9
+bindsym $mod+0 workspace $ws1-10
+# laptop
+bindsym $mod+ctrl+1 workspace $ws2-1
+bindsym $mod+ctrl+2 workspace $ws2-2
+bindsym $mod+ctrl+3 workspace $ws2-3
+bindsym $mod+ctrl+4 workspace $ws2-4
+bindsym $mod+ctrl+5 workspace $ws2-5
+bindsym $mod+ctrl+6 workspace $ws2-6
+bindsym $mod+ctrl+7 workspace $ws2-7
+bindsym $mod+ctrl+8 workspace $ws2-8
+bindsym $mod+ctrl+9 workspace $ws2-9
+bindsym $mod+ctrl+0 workspace $ws2-10
+
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1-1
+bindsym $mod+Shift+2 move container to workspace $ws1-2
+bindsym $mod+Shift+3 move container to workspace $ws1-3
+bindsym $mod+Shift+4 move container to workspace $ws1-4
+bindsym $mod+Shift+5 move container to workspace $ws1-5
+bindsym $mod+Shift+6 move container to workspace $ws1-6
+bindsym $mod+Shift+7 move container to workspace $ws1-7
+bindsym $mod+Shift+8 move container to workspace $ws1-8
+bindsym $mod+Shift+9 move container to workspace $ws1-9
+bindsym $mod+Shift+0 move container to workspace $ws1-10
+
+bindsym $mod+Shift+ctrl+1 move container to workspace $ws2-1
+bindsym $mod+Shift+ctrl+2 move container to workspace $ws2-2
+bindsym $mod+Shift+ctrl+3 move container to workspace $ws2-3
+bindsym $mod+Shift+ctrl+4 move container to workspace $ws2-4
+bindsym $mod+Shift+ctrl+5 move container to workspace $ws2-5
+bindsym $mod+Shift+ctrl+6 move container to workspace $ws2-6
+bindsym $mod+Shift+ctrl+7 move container to workspace $ws2-7
+bindsym $mod+Shift+ctrl+8 move container to workspace $ws2-8
+bindsym $mod+Shift+ctrl+9 move container to workspace $ws2-9
+bindsym $mod+Shift+ctrl+0 move container to workspace $ws2-10
+
+
+#monitor
+workspace $ws1-1 output $monitor
+workspace $ws1-2 output $monitor
+workspace $ws1-3 output $monitor
+workspace $ws1-4 output $monitor
+workspace $ws1-5 output $monitor
+workspace $ws1-6 output $monitor
+workspace $ws1-7 output $monitor
+workspace $ws1-8 output $monitor
+workspace $ws1-9 output $monitor
+workspace $ws1-10 output $monitor
+
+workspace $ws2-1 output $laptop
+workspace $ws2-2 output $laptop
+workspace $ws2-3 output $laptop
+workspace $ws2-4 output $laptop
+workspace $ws2-5 output $laptop
+workspace $ws2-6 output $laptop
+workspace $ws2-7 output $laptop
+workspace $ws2-8 output $laptop
+workspace $ws2-9 output $laptop
+workspace $ws2-10 output $laptop
 
 
 #_______________________________Modes__________________________________
@@ -227,6 +303,8 @@ client.focused #FF0000 #CC0000 #ffffff #3c6f73   #3e4e4f
 for_window [class="^.*"] border pixel 1
 gaps inner 10
 gaps outer 0
+
+for_window [class="jetbrains-.*" title="win0"] floating enable border
 
 #____________________Mouse_____________________________________________
 

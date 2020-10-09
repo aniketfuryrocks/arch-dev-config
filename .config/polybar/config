@@ -12,7 +12,8 @@ alert = #bd2c40
 
 
 
-[bar/example]
+[bar/monitor]
+monitor = HDMI-1-1
 width = 100%
 height = 35
 
@@ -39,6 +40,41 @@ font-4 = "Font Awesome 5 Free Regular:size=12;0"
 font-5 = "Font Awesome 5 Brands:size=12;0"
 
 modules-left = i3
+modules-right = date powermenu
+
+
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/laptop]
+monitor = eDP-1-1
+width = 100%
+height = 30
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 3
+padding-right = 3
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=12;
+font-1 = "Siji:pixelsize=16;0"
+font-2 = "Font Awesome 5 Free:size=10;0"
+font-3 = "Font Awesome 5 Free Solid:size=10;0"
+font-4 = "Font Awesome 5 Free Regular:size=10;0"
+font-5 = "Font Awesome 5 Brands:size=10;0"
+
+modules-left = i3
 modules-right = pulseaudio wlan eth battery date powermenu
 
 tray-position = center
@@ -57,48 +93,40 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
+strip-wsnumbers = true
+;pin-workspaces = true
+
 
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-
-ws-icon-default = 
 
 ; focused = Active workspace on focused monitor
-label-focused = %icon%
+label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %icon%
+label-unfocused = %name%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %icon%
+label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %icon%
+label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
-; label-separator = |
-
+;label-separator = |
+;label-separator-padding = 0
+;label-separator-foreground = #ffb52a
 
 
 ;_________________________________ Wlan __________________________________
