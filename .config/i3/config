@@ -4,20 +4,14 @@ set $mod Mod4
 font pango:DejaVu Sans Mono 11
 
 #monitor
-set $laptop eDP-1-1 # internal
-set $monitor HDMI-1-1 # external
-
-# Set xrandr settings at startup
-exec xrandr --output eDP-1-1 --mode 1600x900 --right-of HDMI-1-1
-exec xrandr --output HDMI-1-1 --primary
-
+set $laptop eDP-1 # internal
+set $monitor HDMI-1 # external
 
 #____________________Launch Application key bindings__________________________________
 
 
 # Screenshot
 bindsym Print exec flameshot gui
-
 
 # Terminal
 bindsym $mod+Return exec alacritty
@@ -26,7 +20,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+shift+Return exec rofi -show run
 
 # Lock
-bindsym $mod+l exec i3lock -k --pass-media-keys --pass-screen-keys --pass-volume-keys -C --ring-width 2 -i ~/Pictures/lock.jpg --timecolor=ffffffff
+bindsym $mod+l exec betterlockscreen -l
 
 # Atom
 bindsym $mod+ctrl+a exec atom
