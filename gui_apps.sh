@@ -1,7 +1,7 @@
 #disk
 sudo pacman -S gnome-disk-utility gnome-keyring obs-studio firefox gpick atom
 #snap
-pamac build snapd
+yay -S snapd
 sudo systemctl enable --now snapd.socket
 sudo systemctl start snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
@@ -10,17 +10,16 @@ sudo pacman -S flatpak
 #vscode
 sudo pacman -S code
 #mailspring
-pamac build mailspring
+yay -S mailspring
 #discord
-sudo snap install discord --classic
+yay -S discord --classic
 #spotify
-curl -sS https://download.spotify.com/debian/pubkey.gpg | gpg --import -
-pamac build spotify
+sudo snap install spotify
 #woeusb
-pamac build woeusb-git
+yay -S woeusb-git
 #jetbrains toolbox
-pamac build jetbrains-toolbox
+yay -S jetbrains-toolbox
 #zoom
-pamac build zoom
+yay -S zoom
 #pamac
-pamac build postman-bin
+yay -S postman-bin

@@ -1,2 +1,2 @@
-pamac build optimus-manager
-pamac build optimus-manager-qt
+yay -S optimus-manager
+yay -S optimus-manager-qt

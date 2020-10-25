@@ -4,7 +4,7 @@ git config --global user.name "aniketfuryrocks"
 git config --global credential.helper store
 
 #nvm
-pamac build nvm
+yay -S nvm
 source ~/.zshrc
 
 #node

@@ -4,7 +4,7 @@ sudo pacman -S xorg xorg-server-devel xorg-server xorg-xinit alacritty vlc
 sudo pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth alsa-utils alsa-plugins alsa-lib pavucontrol
 #basic fonts
 sudo pacman -S noto-fonts-emoji noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-liberation ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-awesome
-pamac build siji-git ttf-ms-fonts
+yay -S siji-git ttf-ms-fonts
 #alacritty config
 mkdir -p ~/.config
 cp -avr .config/alacritty ~/.config
@@ -14,7 +14,7 @@ read -p "Do you use nvidia ? " -n 1 -r
 echo #move to a new line
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
-  sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings opencl-nvidia
+  sudo pacman -S nvidia nvidia-utils nvidia-settings opencl-nvidia
   sudo echo "blacklist nouveau" | sudo tee /usr/lib/modprobe.d/nvidia.conf
 fi
 #dpi
