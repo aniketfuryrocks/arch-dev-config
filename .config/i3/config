@@ -3,9 +3,13 @@ set $mod Mod4
 
 font pango:DejaVu Sans Mono 11
 
-#monitor
+# monitor
 set $laptop eDP-1 # internal
 set $monitor HDMI-1 # external
+
+# set resolution
+exec --no-startup-id xrandr --output eDP1 --right-of HDMI1 -r 1600x900
+exec --no-startup-id xrandr --output HDMI1 --primary
 
 #____________________Launch Application key bindings__________________________________
 
@@ -22,11 +26,8 @@ bindsym $mod+shift+Return exec rofi -show run
 # Lock
 bindsym $mod+l exec betterlockscreen -l
 
-# Atom
-bindsym $mod+ctrl+a exec atom
-
 # Settings
-bindsym $mod+ctrl+s exec systemsettings5
+bindsym $mod+shift+e arcolinux-logout-git
 
 
 #_________________________________Startup Applications__________________________________
@@ -37,7 +38,7 @@ exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg   # Set Wallp
 exec_always --no-startup-id sh ~/.config/polybar/launch.sh    # Polybar
 exec --no-startup-id picom --experimental-backends            # Picom (Compositor)
 exec --no-startup-id dunst                                    # Dunst (Notification)
-
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &  # Polkit
 
 # Tray Icons
 
@@ -47,6 +48,8 @@ exec --no-startup-id nm-applet                                # Network
 exec --no-startup-id blueman-tray                             # Bluetooth
 exec --no-startup-id cbatticon                                # Power
 exec --no-startup-id optimus-manager-qt                       # Nvida/Intel Switcher
+exec --no-startup-id pamac-tray                               # Pamac Tray
+
 
 # My Apps
 
@@ -60,9 +63,9 @@ exec --no-startup-id discord                                  # Discord (On Work
 
 assign [class="steam"] $ws1-8
 assign [class="Lutris"] $ws1-9
-
 assign [class="firefox"] $ws2-5
 for_window [class="Spotify"] move to workspace $ws2-7
+for_window [class="Spotify"] focus
 assign [class="discord"] $ws2-8
 assign [class="Mailspring"] $ws2-9
 assign [class="zoom"] $ws2-10
@@ -125,12 +128,6 @@ bindsym $mod+space focus
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-
-
 
 
 #____________________________________Workspaces_____________________________
@@ -262,32 +259,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-
-#_______________________________i3 bar__________________________________
-
-
-#bar {
-#    status_command          i3blocks
-#    position                top
-#    separator_symbol        "|"
-#    workspace_buttons       yes
-#    strip_workspace_numbers yes
-#    height                  30
-#    tray_padding            3
-#    colors {
-#        background  #212121
-#        statusline  #dddddd
-#        separator   #666666
-#        # class             border  backgr. text
-#        focused_workspace   #2b83a6 #2b83a6 #ffffff
-#        active_workspace    #212121 #212121 #ffffff
-#        inactive_workspace  #212121 #212121 #86888c
-#        urgent_workspace    #d64e4e #d64e4e #ffffff
-#        binding_mode        #229c56 #229c56 #ffffff
-#    }
-#}
-
 
 
 #_______________________________borders_________________________________

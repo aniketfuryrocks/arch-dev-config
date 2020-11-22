@@ -1,5 +1,5 @@
 # utils
-sudo pacman -S picom rofi ranger conky playerctl libnotify dunst feh dolphin
+sudo pacman -S picom rofi ranger playerctl libnotify dunst feh dolphin polkit-gnome pamac-tray
 yay -S betterlockscreen
 
 # dunst notification config

@@ -22,15 +22,6 @@ sudo cp audio.conf /etc/bluetooth/audio.conf
 sudo pacman -S cups hplip
 sudo systemctl enable org.cups.cupsd.service
 
-
-# _________configs___________
-#hostname
-read -p "Enter hostname : " host_name
-echo $host_name | sudo tee -a /etc/hostname
-#hosts
-echo "127.0.1.1	$host_name" | sudo tee -a /etc/hosts
-sudo cp hosts /etc/hosts
-
 #oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 #syntax highlighting
