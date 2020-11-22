@@ -1,7 +1,5 @@
-echo "install graphics drivers before running this"
-
 # i3 and lightdm (Install plasma for settings and other support)
-sudo pacman -S i3 i3-gaps lightdm lightdm-webkit2-greeter plasma
+sudo pacman -S i3 i3-gaps lightdm lightdm-webkit2-greeter
 yay -S polybar
 sudo systemctl enable lightdm
 
