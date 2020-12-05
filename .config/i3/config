@@ -4,12 +4,13 @@ set $mod Mod4
 font pango:DejaVu Sans Mono 11
 
 # monitor
-set $laptop eDP-1 # internal
-set $monitor HDMI-1 # external
+set $laptop eDP-1-1 # internal
+set $monitor HDMI-1-1 # external
 
 # set resolution
-exec --no-startup-id xrandr --output eDP1 --right-of HDMI1 -r 1600x900
-exec --no-startup-id xrandr --output HDMI1 --primary
+exec --no-startup-id xrandr --auto
+exec --no-startup-id xrandr --output HDMI-1-1 --primary --left-of eDP-1-1
+exec --no-startup-id xrandr --output eDP-1-1 --right-of HDMI-1-1 --mode 1600x900
 
 #____________________Launch Application key bindings__________________________________
 
@@ -22,12 +23,13 @@ bindsym $mod+Return exec alacritty
 
 # Rofi program launcher
 bindsym $mod+shift+Return exec rofi -show run
+bindsym $mod+period exec rofimoji --insert-with-clipboard
 
 # Lock
 bindsym $mod+l exec betterlockscreen -l
 
 # Settings
-bindsym $mod+shift+e arcolinux-logout-git
+bindsym $mod+shift+e exec arcolinux-logout-git
 
 
 #_________________________________Startup Applications__________________________________
@@ -42,6 +44,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Tray Icons
 
+exec --no-startup-id pamac-tray				      # Pamac
 exec --no-startup-id mictray                                  # Mic
 exec --no-startup-id pasystray                                # Audio
 exec --no-startup-id nm-applet                                # Network
