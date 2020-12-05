@@ -1,6 +1,6 @@
 # utils
-sudo pacman -S picom rofi ranger playerctl libnotify dunst feh dolphin polkit-gnome pamac-tray
-yay -S betterlockscreen
+sudo pacman -S picom rofi rofimoji ranger playerctl libnotify dunst feh dolphin polkit-gnome
+yay -S betterlockscreen pamac-aur
 
 # dunst notification config
 cp -avr .config/dunst ~/.config

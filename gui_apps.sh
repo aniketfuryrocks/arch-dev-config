@@ -8,15 +8,15 @@ sudo ln -s /var/lib/snapd/snap /snap
 #flatpak
 sudo pacman -S flatpak
 #vscode
-sudo pacman -S code
+yay -S visual-studio-code-bin
 #mailspring
 yay -S mailspring
 #discord
-yay -S discord --classic
+yay -S discord
 #spotify
 sudo snap install spotify
 #woeusb
-yay -S woeusb-git
+yay -S woeusb
 #jetbrains toolbox
 yay -S jetbrains-toolbox
 #zoom
