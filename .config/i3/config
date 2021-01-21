@@ -4,13 +4,13 @@ set $mod Mod4
 font pango:DejaVu Sans Mono 11
 
 # monitor
-set $laptop eDP-1-1 # internal
-set $monitor HDMI-1-1 # external
+set $laptop eDP-1 # internal
+set $monitor HDMI-1 # external
 
 # set resolution
 exec --no-startup-id xrandr --auto
-exec --no-startup-id xrandr --output HDMI-1-1 --primary --left-of eDP-1-1
-exec --no-startup-id xrandr --output eDP-1-1 --right-of HDMI-1-1 --mode 1600x900
+exec --no-startup-id xrandr --output HDMI-1 --primary
+exec --no-startup-id xrandr --output eDP-1 --right-of HDMI-1 --mode 1600x900
 
 #____________________Launch Application key bindings__________________________________
 
@@ -22,7 +22,7 @@ bindsym Print exec flameshot gui
 bindsym $mod+Return exec alacritty
 
 # Rofi program launcher
-bindsym $mod+shift+Return exec rofi -show run
+bindsym $mod+shift+Return exec i3-dmenu-desktop --dmenu='rofi -dmenu -show-icons'
 bindsym $mod+period exec rofimoji --insert-with-clipboard
 
 # Lock
@@ -38,7 +38,7 @@ bindsym $mod+shift+e exec arcolinux-logout-git
 
 exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg   # Set Wallpaper
 exec_always --no-startup-id sh ~/.config/polybar/launch.sh    # Polybar
-exec --no-startup-id picom --experimental-backends            # Picom (Compositor)
+exec --no-startup-id prime-run picom                          # Picom (Compositor)
 exec --no-startup-id dunst                                    # Dunst (Notification)
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &  # Polkit
 
@@ -56,17 +56,21 @@ exec --no-startup-id pamac-tray                               # Pamac Tray
 
 # My Apps
 
-exec --no-startup-id firefox                                  # Firefox (On Workspace 2)
+exec --no-startup-id brave                                    # Brave (On Workspace 2)
 exec --no-startup-id spotify                                  # Spotify (On Workspace 5)
 exec --no-startup-id mailspring                               # Mailspring (On Workspace 6)
 exec --no-startup-id discord                                  # Discord (On Workspace 6)
-
+exec --no-startup-id steam				      # Steam (On Workspace 9)
+exec --no-startup-id signal-desktop --start-in-tray	      # Signal (Minimized Tray)
+exec --no-startup-id telegram-desktop -startintray            # Telegram (Minimized Tray)
 
 # Assign Workspaces:
 
-assign [class="steam"] $ws1-8
-assign [class="Lutris"] $ws1-9
-assign [class="firefox"] $ws2-5
+assign [class="Steam"] $ws1-9
+assign [class="epicgameslauncher.exe"] $ws1-8
+assign [class="Lutris"] $ws1-8
+assign [class="firefox"] $ws1-5
+assign [class="Brave-browser"] $ws1-5
 for_window [class="Spotify"] move to workspace $ws2-7
 for_window [class="Spotify"] focus
 assign [class="discord"] $ws2-8
@@ -141,11 +145,12 @@ set $ws1-1 1:
 set $ws1-2 2:
 set $ws1-3 3:
 set $ws1-4 4:
-set $ws1-5 5:
+set $ws1-5 5:
 set $ws1-6 6
 set $ws1-7 7
-set $ws1-8 8:
-set $ws1-9 9:
+
+set $ws1-9 9:
+set $ws1-8 9:
 set $ws1-10 10:
 # laptop
 set $ws2-1 11:

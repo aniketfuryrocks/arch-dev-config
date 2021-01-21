@@ -1,2 +1,2 @@
 killall -q polybar
-polybar monitor --reload & polybar laptop --reload 
+polybar monitor --reload 
