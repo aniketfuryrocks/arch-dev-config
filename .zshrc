@@ -1,8 +1,7 @@
 export ZSH="/home/aniketfuryrocks/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
 ZSH_THEME="robbyrussell"
-#plugins
 plugins=(git zsh-autosuggestions)
+source $ZSH/oh-my-zsh.sh
 #default apps
 export EDITOR=nvim
 #nvm
